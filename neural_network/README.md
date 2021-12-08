@@ -1,7 +1,7 @@
 
 # Neural Network
 
-# Reverse mode automatic differentation
+## Reverse mode automatic differentation
 In a neural network reverse mode automatic differentation is a technique for computing the derivative of the loss function with respect to the model parameters.
 
 For binary classification the following loss function is used:
