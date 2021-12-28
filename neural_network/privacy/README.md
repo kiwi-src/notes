@@ -15,7 +15,7 @@ In order to infer the training data, the fake inputs x'<sub>1</sub> and x'<sub>2
 
 The loss function L<sub>r</sub> (r stands for regression) compares the true gradient with the fake gradient. The gradient of this function wrt x' is computed and the fake input is updated with this gradient.
 
-<img src="tex/model.png" width=75%>
+<img src="tex/model.png" width=50%>
 
 The module `render_loss.py` renders the loss function L<sub>r</sub>.
 
