@@ -30,7 +30,7 @@ $\begin{aligned}
 \node[box_style, below of=2, node distance={6cm}, text width=5.0cm] (3) {
     $\begin{aligned}
         \text{Loss} \\
-        L_r(\mathbf{x'})&= \left(\nabla_\mathbf{x} L_c - \nabla_\mathbf{x'} L_c)\right) ^2
+        L_r(\mathbf{x'})&= \left(\nabla_\mathbf{x} \bar{L_c} - \nabla_\mathbf{x'} \bar{L_c})\right) ^2
     \end{aligned}$};
 
 % Data to model
@@ -50,8 +50,8 @@ $\begin{aligned}
 % edge label: model -> loss
 \draw[->] (2) -- node[right, pos=0.5, align=left] {%
     $\begin{aligned}
-        \nabla_\mathbf{x} L_c\\
-        \nabla_\mathbf{x'} L_c
+        \nabla_\mathbf{x} \bar{L_c}\\
+        \nabla_\mathbf{x'} \bar{L_c}
     \end{aligned}$} (3);
 
 \end{tikzpicture} 
