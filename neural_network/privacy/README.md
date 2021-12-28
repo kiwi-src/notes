@@ -15,7 +15,7 @@ In order to infer the training data, the fake inputs x'<sub>1</sub> and x'<sub>2
 
 The loss function L<sub>r</sub> (r stands for regression) compares the true gradient with the fake gradient. The gradient of this function wrt x' is computed and the fake input is updated with this gradient.
 
-<img src="tex/model.png">
+<img src="tex/model.png" width=75%>
 
 The module `render_loss.py` renders the loss function L<sub>r</sub>.
 
@@ -25,11 +25,4 @@ The module `render_loss.py` renders the loss function L<sub>r</sub>.
 * The reason for the slow convergence is that the loss function is very flat. The flatter the loss function the smaller the gradients, the longer it takes to converge.
 * A flat loss function means that there are many batches with different input values where the fake gradient is almost the same as the true gradient.
 
-<img src="loss.png">
-
-
-## Useful Commands
-Convert pdf to png:
-```Terminal
-sips -s format png model.pdf --out model.png
-```
+<img src="loss.png" width="75%">
