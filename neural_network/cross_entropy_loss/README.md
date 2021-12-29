@@ -7,7 +7,7 @@ In case only the labels are known and not the inputs, the prediction that yields
 ``` Python
 ratio_y1 = num_examples_y1 / num_examples
 
-P(Y=1|X) = ratio_y1
+prob_y1_given_x = ratio_y1 # P(Y=1|X)
 
 cross_entropy_loss = ratio_y1 * -log(ratio_y1) + 
                      (1-ratio_y1) * -log((1-ratio_y1))
@@ -42,7 +42,7 @@ Example:
 | 1 | 0 | 0.5000 |
 | 1 | 1 | 0.5000 |
 
-```
+``` Python
 cross_entropy_loss = -log(0.5) = 0.693157
 ```
 
@@ -54,7 +54,7 @@ In general the lowest cross entropy loss is achieved by predicting the true cond
 | 1 | 1 | 0.6667 |
 | 0 | 0 | 0.0000 |
 
-```
+``` Python
 cross_entropy_loss = -log(0.5) = 0.562335
 ```
 
@@ -66,6 +66,6 @@ In case there are no latent variables, the lowest achievable cross entropy loss 
 | 1 | 1 | 1.0000 |
 | 0 | 0 | 0.0000 |
 
-```
+``` Python
 cross_entropy_loss = 0.000000
 ```
