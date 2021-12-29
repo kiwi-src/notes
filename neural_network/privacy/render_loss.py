@@ -55,8 +55,8 @@ def main():
     plt.annotate(f"Step {points[99][0]}", (points[99][1]+0.005, points[99][2]),
                  arrowprops=dict(arrowstyle="->", color='black'), xytext=(points[99][1]+0.1, points[99][2]-0.013))
 
-    plt.xlabel(r"${x_0}$")
-    plt.ylabel(r"${x_1}$")
+    plt.xlabel(r"${x_1}$")
+    plt.ylabel(r"${x_2}$")
     plt.colorbar(plot)
     plt.savefig(os.path.join(utils.BASE_DIR, "loss.png"), dpi=300)
 

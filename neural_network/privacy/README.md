@@ -17,8 +17,8 @@ The loss function L<sub>r</sub> (r stands for regression) compares the true grad
 <p align="center">
 <img src="tex/model.png" width=50%>
 </p>
-The module `render_loss.py` renders the loss function L<sub>r</sub>.
 
+The module `render_loss.py` renders the loss function L<sub>r</sub>.
 
 ## Conclusions
 * When applied on a fully connected neural network, the method decribed in the paper [Deep Leakage from Gradients](https://arxiv.org/pdf/1906.08935.pdf) only converges fast for a batch size of 1 and 1 feature. For bigger batch sizes convergence is slow. An example for a batch size of 2 is shown in the figure below.
