@@ -24,9 +24,11 @@ Example:
 
 For this example the best prediction is
 ``` Python
-P(Y=1|X) = 3/4 = 0.75
+ratio_y1 = 3/4
 
-cross_entropy_loss = 3/4*-log(0.75) + 1/4 * -log(0.25) = 0.562335
+prob_y1_given_x = 3/4 = 0.75 # P(Y=1|X)
+
+cross_entropy_loss = 0.75 * -log(0.75) + 0.25 * -log(0.25) = 0.562335
 ```
 
 ## Lower Bound
