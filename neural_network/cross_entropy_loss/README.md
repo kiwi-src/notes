@@ -7,10 +7,10 @@ In case only the labels Y are known and not the inputs X, the prediction that yi
 ``` Python
 ratio_y1 = num_examples_y1 / num_examples
 
-prob_y1_given_x = ratio_y1 # P(Y=1|X)
+prob_y1 = ratio_y1
 
-cross_entropy_loss = ratio_y1 * -log(ratio_y1) + 
-                     (1-ratio_y1) * -log((1-ratio_y1))
+cross_entropy_loss = ratio_y1 * -log(prob_y1) + 
+                     (1-ratio_y1) * -log((1-prob_y1))
 ```
 
 ### Example
@@ -25,7 +25,7 @@ Train dataset:
 
 For this example the prediction with the smallest cross entropy is
 ``` Python
-prob_y1_given_x = 0.75 # P(Y=1|X)
+prob_y1 = 0.75
 ```
 
 Cross entropy loss on train dataset:
@@ -42,18 +42,11 @@ Test dataset:
 | 0 |
 | 1 |
 
-Predicting the learned probability `P(Y=1|X)=0.75` for every example in the test dataset leads to the following cross entropy loss:
+Predicting the learned probability `P(Y=1)=0.75` for every example in the test dataset leads to the following cross entropy loss:
 ``` Python
 cross_entropy_loss = 2/3 * -log(3/4) + 
                      1/3 * -log(1/4) 
                    = 0.653886
-```
-
-``` Python
-cross_entropy_loss = 2/3 * -log(3/4) +
-                     1/4 * -log(1/3) +
-                     1/4 * -log(1) 
-                   = 0.477386
 ```
 
 ## Lower Bound
