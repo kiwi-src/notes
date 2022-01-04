@@ -1,7 +1,7 @@
 import math
 import random
 
-
+sum = 0.0
 def cross_entropy_loss(prob_y1, label):
     prob_y0 = 1 - prob_y1
 
@@ -48,7 +48,7 @@ def model(inputs, probs_y1_given_x):
 
 
 def lower_bound():
-    print("LOWER BOUND")
+    print('LOWER BOUND')
     best_loss = float('inf')
     best_probs = None
     inputs = [0, 0, 1, 1]
@@ -63,12 +63,12 @@ def lower_bound():
             best_loss = loss
             best_probs = probs
 
-    print(f"Best loss = {best_loss}")
-    print(f"Best probs = {best_probs}")
+    print(f'Best loss = {best_loss}')
+    print(f'Best probs = {best_probs}')
 
 
 def upper_bound():
-    print("UPPER BOUND")
+    print('UPPER BOUND')
     best_loss = float('inf')
     labels = [1, 0, 1, 1]
     for i in range(10000):
@@ -80,24 +80,25 @@ def upper_bound():
         if loss < best_loss:
             best_loss = loss
             best_probs = probs
-    print(f"Best Loss = {best_loss}")
-    print(f"Best Probs = {best_probs}")
+    print(f'Best Loss = {best_loss}')
+    print(f'Best Probs = {best_probs}')
 
 
 def print_probs():
-    print("PRINT PROBS")
+    print('PRINT PROBS')
     inputs = [1, 1, 1, 0]
     labels = [1, 1, 1, 0]
     probs = compute_probs(inputs, labels)
-    print("| X | Y | P(Y=1|X) |")
-    print("| - | - | - |")
+    print('| X | Y | P(Y=1|X) |')
+    print('| - | - | - |')
     for x, y in zip(inputs, labels):
-        print(f"| {x} | {y} | {probs[x]:.4f} |")
+        print(f'| {x} | {y} | {probs[x]:.4f} |')
 
 
 if __name__ == '__main__':
-    lower_bound()
-    upper_bound()
-    print_probs()
+    #lower_bound()
+    #upper_bound()
+    #print_probs()
 
-    mean_cross_entropy_loss([2/3, 2/3, 2/3, 0.000000000001], [1, 0, 1, 0])
+    mean_loss = mean_cross_entropy_loss([3/4, 3/4, 3/4, 3/4], [1, 0, 1, 1])
+    print(f'Mean Loss = {mean_loss:.6f}')

@@ -2,7 +2,7 @@
 
 ## Upper Bound
 
-In case only the labels are known and not the inputs, the prediction that yields the lowest cross entropy is
+In case only the labels Y are known and not the inputs X, the prediction that yields the lowest cross entropy is
 
 ``` Python
 ratio_y1 = num_examples_y1 / num_examples
@@ -13,22 +13,47 @@ cross_entropy_loss = ratio_y1 * -log(ratio_y1) +
                      (1-ratio_y1) * -log((1-ratio_y1))
 ```
 
-Example:
+### Example
+Train dataset:
 
-| Y | P(Y=1\|X) |
-| ----- | ----- |
-| 1 | 0.75 |
-| 0 | 0.00 |
-| 1 | 0.75 |
-| 1 | 0.75 |
+| Y |
+| - |
+| 1 |
+| 0 |
+| 1 | 
+| 1 |
 
-For this example the best prediction is
+For this example the prediction with the smallest cross entropy is
 ``` Python
-ratio_y1 = 3/4
+prob_y1_given_x = 0.75 # P(Y=1|X)
+```
 
-prob_y1_given_x = 3/4 = 0.75 # P(Y=1|X)
+Cross entropy loss on train dataset:
+``` Python
+cross_entropy_loss = 3/4 * -log(3/4) + 
+                     1/4 * -log(1/4) 
+                   = 0.562335
+```
 
-cross_entropy_loss = 0.75 * -log(0.75) + 0.25 * -log(0.25) = 0.562335
+Test dataset:
+| Y | 
+| - |
+| 1 |
+| 0 |
+| 1 |
+
+Predicting the learned probability `P(Y=1|X)=0.75` for every example in the test dataset leads to the following cross entropy loss:
+``` Python
+cross_entropy_loss = 2/3 * -log(3/4) + 
+                     1/3 * -log(1/4) 
+                   = 0.653886
+```
+
+``` Python
+cross_entropy_loss = 2/3 * -log(3/4) +
+                     1/4 * -log(1/3) +
+                     1/4 * -log(1) 
+                   = 0.477386
 ```
 
 ## Lower Bound
@@ -57,7 +82,10 @@ In general the lowest cross entropy loss is achieved by predicting the true cond
 | 0 | 0 | 0.0000 |
 
 ``` Python
-cross_entropy_loss = -log(0.5) = 0.562335
+cross_entropy_loss = 2/4 * -log(2/3) +
+                     1/4 * -log(1/3) +
+                     1/4 * -log(1) 
+                   = 0.477386
 ```
 
 In case there are no latent variables, the lowest achievable cross entropy loss is 0.
