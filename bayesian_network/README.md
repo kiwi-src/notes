@@ -3,11 +3,6 @@
 ## Bayesian Network
 Let's assume a classification problem with features `X1` and `X2` and label `Y`. Both features directly effect label `Y` and feature `X1` effects `X2`.
 
-The joint probability `P(X1,X2,Y)`can be computed using the chain rule:
-```
-P(X1,X2,Y) = P(Y|X1,X2) * P(X2|X1) * P(X1)
-```
-
 <p align="center">
 <img src="bayesian-network.png" width="50%">
 </p>
@@ -25,7 +20,7 @@ Compute the joint probability by using the chain rule
 P(X1,X2,Y) = P(Y|X1,X2) * P(X2|X1) * P(X1)
 ```
 
-Rewrite the joint probability using the Bayes theorem
+Rewrite the joint probability using the Bayes’ theorem
 ```Python
 # E1
 P(Y|X1,X2) = P(X1,X2,Y) / P(X2|X1) * P(X1)
