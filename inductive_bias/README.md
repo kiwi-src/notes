@@ -16,15 +16,15 @@ The conditional probability distributions of different machine learning models a
 <table>
 <tr>
     <td>Model</td>
-    <td style="text-align: center; vertical-align: middle;">Neural Network</td>
-    <td style="text-align: center; vertical-align: middle;">XGBoost</td>
-    <td style="text-align: center; vertical-align: middle;">Naive Bayes</td>
+    <td>Neural Network</td>
+    <td>XGBoost</td>
+    <td>Naive Bayes</td>
 </tr>
 <tr>
     <td>Validation Loss</td>
-    <td style="text-align: center; vertical-align: middle;">0.1726</td>
-    <td style="text-align: center; vertical-align: middle;">0.2708</td>
-    <td style="text-align: center; vertical-align: middle;">0.2444</td>
+    <td>0.1726</td>
+    <td>0.2708</td>
+    <td>0.2444</td>
 </tr>
 <tr>
     <td></td>
