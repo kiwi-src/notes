@@ -14,7 +14,6 @@ class Dataset:
     def _load(self):
         dataset = datasets.load_breast_cancer()
         data = dataset['data']
-        target = dataset['target']
         self.feature_names = ['worst concave points', 'worst smoothness']
 
         feature_0 = np.where(
@@ -22,14 +21,14 @@ class Dataset:
         feature_1 = np.where(
             dataset['feature_names'] == self.feature_names[1])[0][0]
 
-        inputs = []
+        features = []
         labels = []
-        for input, label in zip(data, target):
-            inputs.append([input[feature_0], input[feature_1]])
+        for input, label in zip(data,  dataset['target']):
+            features.append([input[feature_0], input[feature_1]])
             labels.append(label)
-        return np.asarray(inputs), np.asarray(labels)
+        return np.asarray(features), np.asarray(labels)
 
-    def load(self, format, batch_size, num_examples=None):
+    def load(self, format, batch_size):
         inputs, labels = self._load()
         data = train_test_split(inputs, labels, test_size=0.5, shuffle=False)
         if format == 'tf':

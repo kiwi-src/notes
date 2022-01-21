@@ -32,7 +32,7 @@ if __name__ == '__main__':
             ax[row_index][col_index].plot(
                 x, scipy.stats.norm.pdf(x, mean[col_index], std[col_index]))
             ax[row_index][col_index].hist(
-                train_features[:, 0], bins=50, density=True, histtype='stepfilled', alpha=0.5)
+                train_features[:, 0], bins=8, density=True, histtype='stepfilled', alpha=0.5)
 
     plt.tight_layout()
     plt.savefig('inductive_bias/images/histograms.png', dpi=300)
