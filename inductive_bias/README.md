@@ -37,9 +37,9 @@ The conditional probability distributions of different machine learning models a
     <td>0.2444</td>
 </tr>
 <tr>
-    <td>Naive Bayes – Categorical (8 bins)</td>
+    <td>Naive Bayes – Categorical (10 bins, 18 bins)</td>
     <td><img src="images/naive-bayes-categorical.png"></td>
-    <td>0.2388</td>
+    <td>0.2326</td>
 </tr>
 </table>
 
