@@ -15,7 +15,7 @@ There are two options how we can fit a Naive Bayes model:
 
 ## Models
 The conditional probability distributions of different machine learning models are plotted below.
-<table style="width: 100%;">
+<table style="width: 50%;">
 <tr>
     <td>Model</td>
     <td>Probability Distribution</td>
