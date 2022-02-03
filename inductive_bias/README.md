@@ -23,22 +23,22 @@ The conditional probability distributions of different machine learning models a
 </tr>
 <tr>
     <td>Neural Network</td>
-    <td><img src="images/neural-network.png"></td>
+    <td><img src="images/neural-network.png" width="50%"></td>
     <td>0.1726</td>
 </tr>
 <tr>
     <td>XGBoost</td>
-    <td><img src="images/xgboost.png"></td>
+    <td><img src="images/xgboost.png" width="50%"></td>
     <td>0.2708</td>
 </tr>
 <tr>
     <td>Naive Bayes – Gaussian</td>
-    <td><img src="images/naive-bayes-gaussian.png"></td>
+    <td><img src="images/naive-bayes-gaussian.png" width="50%"></td>
     <td>0.2444</td>
 </tr>
 <tr>
     <td>Naive Bayes – Categorical (10 bins, 18 bins)</td>
-    <td><img src="images/naive-bayes-categorical.png"></td>
+    <td><img src="images/naive-bayes-categorical.png" width="50%"></td>
     <td>0.2326</td>
 </tr>
 </table>
