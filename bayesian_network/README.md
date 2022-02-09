@@ -16,7 +16,7 @@ Let's assume a classification problem with features `X1` and `X2` and label `Y`.
 
 ### Conditional independence
 
-#### Not independent
+#### Independent
 |X1|X2|Y|
 |-|-|-|
 |1|0|1|
@@ -28,7 +28,9 @@ Observe Y=1
 |?|?|1|
 |?|?|1|
 
+```Python
 P(X2=0,X1=1|Y=1) = 0.5
+```
 
 Observe Y=1 and X1=1
 |X1|X2|Y|
@@ -36,7 +38,9 @@ Observe Y=1 and X1=1
 |1|?|1|
 |1|?|1|
 
+```Python
 P(X2=0|X1=1,Y=1) = 0.5
+```
 
 #### Independent
 |X1|X2|Y|
@@ -50,7 +54,9 @@ Observe Y=1
 |?|?|1|
 |?|?|1|
 
+```Python
 P(X2=0,X1=1|Y=1) = 0.5
+```
 
 Observe Y=1 and X1=1
 |X1|X2|Y|
@@ -58,8 +64,9 @@ Observe Y=1 and X1=1
 |1|?|1|
 |-|-|-|
 
+```Python
 P(X2=0|X1=1,Y=1) = 1.0
-
+```
 ### Derivation
 Compute the joint probability by using the chain rule
 ``` Python
