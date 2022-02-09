@@ -14,6 +14,48 @@ Let's assume a classification problem with features `X1` and `X2` and label `Y`.
 * Fit: Compute `P(Y)`, `P(X1|Y)` and `P(X2|Y)`.
 * Predict: Use `P(Y)`, `P(X1|Y)` and `P(X2|Y)` to compute `P(Y|X1,X2)`.
 
+### Conditional independence
+
+#### Not independent
+|X1|X2|Y
+|-|-|-|
+|1|0|1|
+|1|1|1|
+
+* Observe Y=1
+|X1|X2|Y
+|-|-|-|
+|?|?|1|
+|?|?|1|
+P(X2=0,X1=1|Y=1) = 0.5
+
+* Observe Y=1 and X1=1
+|X1|X2|Y
+|-|-|-|
+|1|?|1|
+|1|?|1|
+P(X2=0|X1=1,Y=1) = 0.5
+
+#### independent
+|X1|X2|Y
+|-|-|-|
+|1|0|1|
+|0|1|1|
+
+* Observe Y=1
+|X1|X2|Y
+|-|-|-|
+|?|?|1|
+|?|?|1|
+P(X2=0,X1=1|Y=1) = 0.5
+
+* Observe Y=1 and X1=1
+|X1|X2|Y
+|-|-|-|
+|1|?|1|
+|-|-|-|
+P(X2=0|X1=1,Y=1) = 1.0
+
 ### Derivation
 Compute the joint probability by using the chain rule
 ``` Python
