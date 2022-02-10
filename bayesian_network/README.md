@@ -22,6 +22,11 @@ Let's assume a classification problem with features `X1` and `X2` and label `Y`.
 P(X2|X1,Y) = P(X2|Y)
 ```
 
+Equivalently, conditional independence may be stated as:
+```Python
+P(X1,X2|Y)=P(X1|Y)P(X2|Y)
+```
+
 #### Independent
 |X1|X2|Y|
 |-|-|-|
@@ -38,7 +43,7 @@ Observe Y=1
 P(X2=0|Y=1) = 0.5
 ```
 
-Observe Y=1 and X1=1
+Observe `Y=1` and `X1=1`
 |X1|X2|Y|
 |-|-|-|
 |1|?|1|
@@ -54,7 +59,7 @@ P(X2=0|X1=1,Y=1) = 0.5
 |1|0|1|
 |0|1|1|
 
-Observe Y=1
+Observe `Y=1`
 |X1|X2|Y|
 |-|-|-|
 |?|?|1|
@@ -64,7 +69,7 @@ Observe Y=1
 P(X2=0|Y=1) = 0.5
 ```
 
-Observe Y=1 and X1=1
+Observe `Y=1` and `X1=1`
 |X1|X2|Y|
 |-|-|-|
 |1|?|1|
