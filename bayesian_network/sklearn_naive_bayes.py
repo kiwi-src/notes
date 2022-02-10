@@ -14,14 +14,14 @@ def one_feature():
 
 def two_features():
     naives_bayes = CategoricalNB(alpha=0.0, fit_prior=True)
-    data = [[0,0], [0,1], [1,0], [1,0]]
-    labels = [0, 0, 1, 0]
+    data = [[1,0], [0,1], [1,0], [1,0], [0,1]]
+    labels = [1,1,1,0,0]
 
     naives_bayes.fit(data, labels)
     probs = naives_bayes.predict_proba(data)
 
-    for features, prob, label in zip(data, probs, labels):
-        print(f'P(Y={label}|X1={features[0]},X2={features[1]})={prob[label]:.4f}')
+    for features, prob in zip(data, probs):
+        print(f'P(Y=1|X1={features[0]},X2={features[1]})={prob[1]:.4f}')
 
 
 if __name__ == '__main__':
