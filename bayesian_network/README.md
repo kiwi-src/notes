@@ -16,6 +16,12 @@ Let's assume a classification problem with features `X1` and `X2` and label `Y`.
 
 ### Conditional independence
 
+`X1` and `X2` are conditionally independent given `Y` if and only if `P(Y) > 0` and
+
+```Python
+P(X2|X1,Y) = P(X2|Y)
+```
+
 #### Independent
 |X1|X2|Y|
 |-|-|-|
@@ -28,8 +34,8 @@ Observe Y=1
 |?|?|1|
 |?|?|1|
 
-```Python
-P(X2=0,X1=1|Y=1) = 0.5
+``` Python
+P(X2=0|Y=1) = 0.5
 ```
 
 Observe Y=1 and X1=1
@@ -42,7 +48,7 @@ Observe Y=1 and X1=1
 P(X2=0|X1=1,Y=1) = 0.5
 ```
 
-#### Independent
+#### Not Independent
 |X1|X2|Y|
 |-|-|-|
 |1|0|1|
@@ -55,7 +61,7 @@ Observe Y=1
 |?|?|1|
 
 ```Python
-P(X2=0,X1=1|Y=1) = 0.5
+P(X2=0|Y=1) = 0.5
 ```
 
 Observe Y=1 and X1=1
